@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sahel AI — Operationalizing AI risk management and advancing AI safety research.">
+  <meta name="description" content="Sahel AI - Operationalizing AI risk management and advancing AI safety research.">
   <title>Sahel AI</title>
+  <!-- Favicon: place your logo file at /assets/logo.svg (or .png) and update the href below -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  <link rel="alternate icon" href="/assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #ffffff;
@@ -29,343 +28,168 @@
       --pad: clamp(1.25rem, 5vw, 2rem);
     }
 
-    html {
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-    body {
-      font-family: var(--font);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.65;
-    }
+    body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.65; }
 
-    /* ── HEADER ─────────────────────────────── */
+    /* ── HEADER ─────────────────────────── */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
       backdrop-filter: saturate(180%) blur(12px);
       -webkit-backdrop-filter: saturate(180%) blur(12px);
       border-bottom: 1px solid var(--rule);
     }
 
     .header-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--pad);
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--pad); height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
     }
 
+    /* Logo */
     .logo {
-      font-weight: 300;
-      font-size: 1.125rem;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+      font-weight: 300; font-size: 1.125rem;
+      letter-spacing: 0.04em; color: var(--ink);
+      text-decoration: none; white-space: nowrap; flex-shrink: 0;
     }
+    .logo strong { font-weight: 600; letter-spacing: -0.01em; }
+    .logo-img { height: 24px; width: auto; display: block; }
 
-    .logo strong {
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-
+    /* Desktop nav */
     nav {
-      display: flex;
-      align-items: center;
-      gap: 0;
+      display: flex; align-items: center;
     }
-
     nav a {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      color: var(--mid);
-      text-decoration: none;
-      padding: 0.35rem 0.75rem;
+      font-size: 0.8125rem; font-weight: 400; color: var(--mid);
+      text-decoration: none; padding: 0.35rem 0.75rem;
+      letter-spacing: 0.01em; transition: color 0.15s ease; white-space: nowrap;
+    }
+    nav a:hover { color: var(--ink); }
+    nav a.external::after { content: ' ↗'; font-size: 0.7rem; opacity: 0.6; }
+
+    /* Hamburger button — hidden on desktop */
+    .nav-toggle {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      padding: 0.4rem; color: var(--ink);
+      flex-shrink: 0;
+    }
+    .nav-toggle svg { display: block; }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none; /* shown via JS class */
+      flex-direction: column;
+      background: #fff;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.5rem var(--pad) 1rem;
+    }
+    .mobile-nav a {
+      font-size: 0.9375rem; font-weight: 400; color: var(--ink);
+      text-decoration: none; padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule);
       letter-spacing: 0.01em;
-      transition: color 0.15s ease;
-      white-space: nowrap;
     }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a.external::after { content: ' ↗'; font-size: 0.75rem; opacity: 0.5; }
+    .mobile-nav.open { display: flex; }
 
-    nav a:hover {
-      color: var(--ink);
-    }
+    /* ── MAIN ───────────────────────────── */
+    main { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
-    nav a.external::after {
-      content: ' ↗';
-      font-size: 0.7rem;
-      opacity: 0.6;
-    }
-
-    /* ── MAIN ───────────────────────────────── */
-    main {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--pad);
-    }
-
-    /* ── HERO ───────────────────────────────── */
+    /* ── HERO ───────────────────────────── */
     .hero {
       padding: clamp(3.5rem, 10vw, 5.5rem) 0 clamp(3rem, 8vw, 4.5rem);
       border-bottom: 1px solid var(--rule);
     }
-
     .hero-eyebrow {
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.25rem;
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.25rem;
     }
-
     .hero h1 {
       font-size: clamp(1.75rem, 5vw, 2.5rem);
-      font-weight: 300;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      max-width: 26ch;
+      font-weight: 300; line-height: 1.25;
+      letter-spacing: -0.02em; color: var(--ink); max-width: 26ch;
     }
-
-    .hero h1 em {
-      font-style: normal;
-      font-weight: 600;
-    }
-
+    .hero h1 em { font-style: normal; font-weight: 600; }
     .hero-sub {
-      margin-top: 1.5rem;
-      font-size: 0.9375rem;
-      color: var(--mid);
-      max-width: 52ch;
-      line-height: 1.7;
+      margin-top: 1.5rem; font-size: 0.9375rem;
+      color: var(--mid); max-width: 52ch; line-height: 1.7;
     }
 
-    /* ── SECTIONS ───────────────────────────── */
-    section {
-      padding: clamp(2.5rem, 7vw, 3.75rem) 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
+    /* ── SECTIONS ───────────────────────── */
+    section { padding: clamp(2.5rem, 7vw, 3.75rem) 0; border-bottom: 1px solid var(--rule); }
+    section:last-of-type { border-bottom: none; }
 
     .section-label {
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 1.5rem;
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 1.5rem;
     }
+    .section-body { font-size: 0.9375rem; color: var(--ink); line-height: 1.75; max-width: 58ch; }
+    .section-body p + p { margin-top: 1rem; }
 
-    .section-body {
-      font-size: 0.9375rem;
-      color: var(--ink);
-      line-height: 1.75;
-      max-width: 58ch;
-    }
-
-    .section-body p + p {
-      margin-top: 1rem;
-    }
-
-    /* ── PAPER ENTRY ────────────────────────── */
-    .paper-list {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .paper-entry {
-      border-left: 2px solid var(--accent);
-      padding: 1.25rem 0 1.25rem 1.5rem;
-    }
-
-    .paper-meta {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .paper-title {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-    }
-
+    /* ── PAPER ──────────────────────────── */
+    .paper-list { margin-top: 2rem; }
+    .paper-entry { border-left: 2px solid var(--accent); padding: 1.25rem 0 1.25rem 1.5rem; }
+    .paper-meta { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .paper-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
     .paper-badge {
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-light);
-      padding: 0.2rem 0.55rem;
-      border-radius: 3px;
+      font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--accent);
+      background: var(--accent-light); padding: 0.2rem 0.55rem; border-radius: 3px;
+      white-space: nowrap; flex-shrink: 0; align-self: center;
     }
-
-    .paper-venue {
-      font-size: 0.8125rem;
-      color: var(--mid);
-      margin-bottom: 0.6rem;
-    }
-
-    .paper-desc {
-      font-size: 0.875rem;
-      color: #4B5563;
-      line-height: 1.65;
-      max-width: 54ch;
-    }
-
+    .paper-venue { font-size: 0.8125rem; color: var(--mid); margin-bottom: 0.6rem; }
+    .paper-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.65; max-width: 54ch; }
     .paper-link {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--link);
-      text-decoration: none;
-      letter-spacing: 0.01em;
+      display: inline-block; margin-top: 0.75rem;
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--link); text-decoration: none; letter-spacing: 0.01em;
     }
+    .paper-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    .paper-link:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* ── PRODUCT ENTRY ──────────────────────── */
-    .product-list {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .product-entry {
-      padding: 1.25rem 0;
-      border-top: 1px solid var(--rule);
-    }
-
-    .product-entry:first-child {
-      border-top: none;
-    }
-
-    .product-name {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.4rem;
-    }
-
-    .product-desc {
-      font-size: 0.875rem;
-      color: #4B5563;
-      line-height: 1.65;
-      max-width: 54ch;
-      margin-bottom: 0.75rem;
-    }
-
-    .product-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
+    /* ── PRODUCTS ───────────────────────── */
+    .product-list { margin-top: 2rem; }
+    .product-entry { padding: 1.25rem 0; border-top: 1px solid var(--rule); }
+    .product-entry:first-child { border-top: none; }
+    .product-name { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .product-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.65; max-width: 54ch; margin-bottom: 0.75rem; }
+    .product-links { display: flex; gap: 1rem; flex-wrap: wrap; }
     .product-links a {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--link);
-      text-decoration: none;
-      letter-spacing: 0.01em;
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--link); text-decoration: none; letter-spacing: 0.01em;
     }
+    .product-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    .product-links a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    /* ── FOOTER ─────────────────────────────── */
+    /* ── FOOTER ─────────────────────────── */
     footer {
       border-top: 1px solid var(--rule);
-      max-width: var(--max);
-      margin: 0 auto;
+      max-width: var(--max); margin: 0 auto;
       padding: 2rem var(--pad);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 0.75rem;
     }
+    .footer-copy { font-size: 0.8125rem; color: var(--mid); }
+    .footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-contact a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
+    .footer-contact a:hover { color: var(--ink); }
+    .footer-links { display: flex; gap: 1.25rem; }
+    .footer-links a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
+    .footer-links a:hover { color: var(--ink); }
 
-    .footer-copy {
-      font-size: 0.8125rem;
-      color: var(--mid);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 1.25rem;
-    }
-
-    .footer-links a {
-      font-size: 0.8125rem;
-      color: var(--mid);
-      text-decoration: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--ink);
-    }
-
-    /* ── MOBILE ──────────────────────────────── */
+    /* ── MOBILE ─────────────────────────── */
     @media (max-width: 640px) {
-      nav {
-        gap: 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
+      nav { display: none; }
+      .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
-      nav::-webkit-scrollbar {
-        display: none;
-      }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-right { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 
-      nav a {
-        padding: 0.35rem 0.6rem;
-        font-size: 0.8rem;
-      }
-
-      .header-inner {
-        height: 52px;
-      }
-
-      .paper-entry {
-        padding-left: 1.1rem;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-    }
-
-    @media (max-width: 400px) {
-      nav a {
-        padding: 0.35rem 0.45rem;
-        font-size: 0.76rem;
-      }
+      .paper-entry { padding-left: 1.1rem; }
     }
   </style>
 </head>
@@ -373,13 +197,40 @@
 
   <header>
     <div class="header-inner">
-      <a href="/" class="logo"><strong>Sahel</strong> AI</a>
-      <nav>
+      <!--
+        Logo: once you have your logo file, place it at /assets/logo.svg
+        and swap the text-only fallback below for:
+          <a href="/" class="logo">
+            <img src="/assets/logo.svg" alt="Sahel AI" class="logo-img">
+          </a>
+        For now, text logo is shown.
+      -->
+      <a href="/" class="logo"><strong>Sahel</strong>&nbsp;AI</a>
+
+      <!-- Desktop nav -->
+      <nav id="desktop-nav">
         <a href="#solutions">Solutions</a>
         <a href="#research">Research</a>
         <a href="#products">Products</a>
         <a href="https://sahel.securitypal.com/" target="_blank" class="external">Trust Center</a>
       </nav>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4"  width="22" height="1.75" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav" id="mobile-nav" role="navigation">
+      <a href="#solutions"  onclick="closeMenu()">Solutions</a>
+      <a href="#research"   onclick="closeMenu()">Research</a>
+      <a href="#products"   onclick="closeMenu()">Products</a>
+      <a href="https://sahel.securitypal.com/" target="_blank" class="external">Trust Center</a>
     </div>
   </header>
 
@@ -435,12 +286,40 @@
   </main>
 
   <footer>
-    <span class="footer-copy">© 2026 Sahel AI</span>
-    <div class="footer-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
+    <span class="footer-copy">© 2026 Sahel Group Inc.</span>
+    <div class="footer-right">
+      <div class="footer-contact"><a href="mailto:hello@sahelai.com">hello@sahelai.com</a></div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const drawer = document.getElementById('mobile-nav');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      // Swap to X icon when open
+      toggle.querySelector('svg').innerHTML = isOpen
+        ? '<line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
+        : '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+    });
+
+    function closeMenu() {
+      drawer.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      toggle.querySelector('svg').innerHTML = '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+    }
+
+    // Close drawer when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('header')) closeMenu();
+    });
+  </script>
 
 </body>
 </html>
