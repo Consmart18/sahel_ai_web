@@ -3,148 +3,442 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sahel AI - Operationalizing AI Risk Management and advancing AI safety research.">
+  <meta name="description" content="Sahel AI — Operationalizing AI risk management and advancing AI safety research.">
   <title>Sahel AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* Minimalist CSS inspired by academic/research labs */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
-      --bg-color: #ffffff;
-      --text-color: #1a1a1a;
-      --link-color: #0056b3;
-      --border-color: #eaeaea;
-      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --bg: #ffffff;
+      --ink: #0D0D0D;
+      --mid: #6B7280;
+      --faint: #F3F4F6;
+      --rule: #E5E7EB;
+      --accent: #1A3A2F;
+      --accent-light: #E8F0EC;
+      --link: #1A3A2F;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --max: 780px;
+      --pad: clamp(1.25rem, 5vw, 2rem);
     }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     body {
-      font-family: var(--font-stack);
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--bg-color);
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
     }
+
+    /* ── HEADER ─────────────────────────────── */
     header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .header-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 300;
+      font-size: 1.125rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .logo strong {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    nav a {
+      font-size: 0.8125rem;
+      font-weight: 400;
+      color: var(--mid);
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      letter-spacing: 0.01em;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: var(--ink);
+    }
+
+    nav a.external::after {
+      content: ' ↗';
+      font-size: 0.7rem;
+      opacity: 0.6;
+    }
+
+    /* ── MAIN ───────────────────────────────── */
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 var(--pad);
+    }
+
+    /* ── HERO ───────────────────────────────── */
+    .hero {
+      padding: clamp(3.5rem, 10vw, 5.5rem) 0 clamp(3rem, 8vw, 4.5rem);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 26ch;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .hero-sub {
+      margin-top: 1.5rem;
+      font-size: 0.9375rem;
+      color: var(--mid);
+      max-width: 52ch;
+      line-height: 1.7;
+    }
+
+    /* ── SECTIONS ───────────────────────────── */
+    section {
+      padding: clamp(2.5rem, 7vw, 3.75rem) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-body {
+      font-size: 0.9375rem;
+      color: var(--ink);
+      line-height: 1.75;
+      max-width: 58ch;
+    }
+
+    .section-body p + p {
+      margin-top: 1rem;
+    }
+
+    /* ── PAPER ENTRY ────────────────────────── */
+    .paper-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .paper-entry {
+      border-left: 2px solid var(--accent);
+      padding: 1.25rem 0 1.25rem 1.5rem;
+    }
+
+    .paper-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .paper-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .paper-badge {
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+    }
+
+    .paper-venue {
+      font-size: 0.8125rem;
+      color: var(--mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .paper-desc {
+      font-size: 0.875rem;
+      color: #4B5563;
+      line-height: 1.65;
+      max-width: 54ch;
+    }
+
+    .paper-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--link);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .paper-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── PRODUCT ENTRY ──────────────────────── */
+    .product-list {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .product-entry {
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .product-entry:first-child {
+      border-top: none;
+    }
+
+    .product-name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .product-desc {
+      font-size: 0.875rem;
+      color: #4B5563;
+      line-height: 1.65;
+      max-width: 54ch;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .product-links a {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--link);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .product-links a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--rule);
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem var(--pad);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
     }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: var(--text-color);
-      letter-spacing: -0.5px;
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--mid);
     }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 0.95rem;
-    }
-    nav a:hover {
-      color: var(--link-color);
-      text-decoration: underline;
-    }
-    h1, h2, h3 {
-      font-weight: 600;
-      line-height: 1.3;
-      margin-top: 2.5rem;
-    }
-    h2 {
-      font-size: 1.25rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.5rem;
-    }
-    p {
-      margin-bottom: 1.25rem;
-    }
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .pill {
-      font-size: 0.8rem;
-      background: #eee;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-left: 0.5rem;
-    }
-    footer {
-      margin-top: 4rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border-color);
-      font-size: 0.85rem;
-      color: #666;
+
+    .footer-links {
       display: flex;
-      justify-content: space-between;
+      gap: 1.25rem;
     }
+
     .footer-links a {
-      margin-left: 1rem;
-      color: #666;
+      font-size: 0.8125rem;
+      color: var(--mid);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    /* ── MOBILE ──────────────────────────────── */
+    @media (max-width: 640px) {
+      nav {
+        gap: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      nav a {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.8rem;
+      }
+
+      .header-inner {
+        height: 52px;
+      }
+
+      .paper-entry {
+        padding-left: 1.1rem;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      nav a {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.76rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a href="/" class="logo">Sahel AI</a>
-    <nav>
-      <a href="#solutions">Solutions</a>
-      <a href="#research">Research</a>
-      <a href="#products">Products</a>
-      <a href="https://sahel.securitypal.com/" target="_blank">Trust Center ↗</a>
-    </nav>
+    <div class="header-inner">
+      <a href="/" class="logo"><strong>Sahel</strong> AI</a>
+      <nav>
+        <a href="#solutions">Solutions</a>
+        <a href="#research">Research</a>
+        <a href="#products">Products</a>
+        <a href="https://sahel.securitypal.com/" target="_blank" class="external">Trust Center</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="hero">
-      <p><strong>Sahel AI</strong> is an AI risk management company. We help organizations safely navigate the deployment of artificial intelligence by operationalizing AI risk management protocols, ensuring systems are secure, compliant, and reliable.</p>
+    <section class="hero">
+      <p class="hero-eyebrow">AI Risk Management</p>
+      <h1>Making AI deployment <em>safe, auditable, and reliable.</em></h1>
+      <p class="hero-sub">Sahel AI helps organizations navigate the operational realities of deploying AI — translating safety principles into governance frameworks that actually work in practice.</p>
     </section>
 
     <section id="solutions">
-      <h2>Solutions</h2>
-      <p>As enterprise AI adoption accelerates, the gap between AI capabilities and organizational safety guardrails widens. We partner with organizations to build and execute robust frameworks for AI governance. Our core focus is translating theoretical AI safety principles into operational reality, helping teams map vulnerabilities, mitigate risks, and deploy models with confidence.</p>
+      <p class="section-label">Solutions</p>
+      <div class="section-body">
+        <p>As enterprise AI adoption accelerates, the gap between capability and organizational safety guardrails widens. We partner with organizations to build and execute robust frameworks for AI governance.</p>
+        <p>Our core focus is translating theoretical AI safety principles into operational reality — helping teams map vulnerabilities, mitigate risks, and deploy models with confidence.</p>
+      </div>
     </section>
 
     <section id="research">
-      <h2>Research</h2>
-      <p>Technical AI governance requires a deep understanding of model behaviors. We conduct and publish research in AI safety to advance the scientific community's understanding of systemic risks.</p>
-      <ul>
-        <li>
-          <strong>Mapping human anti-collusion mechanisms to multi-agent AI systems</strong> <span class="pill">ICML 2026</span><br>
-          Published in <em>Knowledge-Based Systems</em> and accepted to the ICML 2026 Workshop on Technical AI Governance. This paper explores how established human frameworks for preventing collusion can be adapted to secure multi-agent AI environments. <br>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0950705126007938" target="_blank">Read the paper ↗</a>
-        </li>
-      </ul>
+      <p class="section-label">Research</p>
+      <div class="section-body">
+        <p>Technical AI governance requires a deep understanding of model behaviors. We conduct and publish research in AI safety to advance the scientific community's understanding of systemic risks.</p>
+      </div>
+      <div class="paper-list">
+        <div class="paper-entry">
+          <div class="paper-meta">
+            <span class="paper-title">Mapping human anti-collusion mechanisms to multi-agent AI systems</span>
+            <span class="paper-badge">ICML 2026</span>
+          </div>
+          <p class="paper-venue">Published in <em>Knowledge-Based Systems</em> · ICML 2026 Workshop on Technical AI Governance</p>
+          <p class="paper-desc">Explores how established human frameworks for preventing collusion can be adapted to secure multi-agent AI environments.</p>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0950705126007938" target="_blank" class="paper-link">Read the paper ↗</a>
+        </div>
+      </div>
     </section>
 
     <section id="products">
-      <h2>Products</h2>
-      <p>Prior to our current focus on risk management, we built targeted applications to streamline complex workflows. Our legacy product is a legal AI solution designed specifically for lawyers to accelerate contract drafting and review.</p>
-      <ul>
-        <li>
-          <strong>Sahel AI for Legal</strong><br>
-          A contract drafting and review tool directly integrated into Microsoft Word, designed to reduce manual review time while maintaining high precision.<br>
-          <a href="https://app.sahel.ai/" target="_blank">Web App ↗</a> | 
-          <a href="https://marketplace.microsoft.com/en-us/product/office/wa200007503?tab=overview" target="_blank">MS Word Add-in ↗</a>
-        </li>
-      </ul>
+      <p class="section-label">Products</p>
+      <div class="section-body">
+        <p>Prior to our current focus on risk management, we built targeted applications to streamline complex workflows.</p>
+      </div>
+      <div class="product-list">
+        <div class="product-entry">
+          <p class="product-name">Sahel AI for Legal</p>
+          <p class="product-desc">A contract drafting and review tool directly integrated into Microsoft Word, designed to reduce manual review time while maintaining high precision.</p>
+          <div class="product-links">
+            <a href="https://app.sahel.ai/" target="_blank">Web App ↗</a>
+            <a href="https://marketplace.microsoft.com/en-us/product/office/wa200007503?tab=overview" target="_blank">MS Word Add-in ↗</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="copyright">
-      &copy; 2026 Sahel AI
-    </div>
+    <span class="footer-copy">© 2026 Sahel AI</span>
     <div class="footer-links">
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
     </div>
   </footer>
 
