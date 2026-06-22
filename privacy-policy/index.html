@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ── Primary SEO ─────────────────────────────────────────── -->
   <title>Privacy Policy — Sahel AI</title>
   <meta name="description" content="Sahel Group Inc. privacy policy. Learn how we collect, use, and protect your information.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://sahelai.com/privacy-policy">
-
-  <!-- ── Open Graph ───────────────────────────────────────────── -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://sahelai.com/privacy-policy">
   <meta property="og:title"       content="Privacy Policy — Sahel AI">
-  <meta property="og:description" content="Sahel Group Inc. privacy policy. Learn how we collect, use, and protect your information.">
+  <meta property="og:description" content="Sahel Group Inc. privacy policy.">
   <meta property="og:site_name"   content="Sahel AI">
 
-  <!-- ── Favicon ──────────────────────────────────────────────── -->
-  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
-  <link rel="alternate icon" href="/assets/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <!-- Favicon (icon-only mark) -->
+  <link rel="icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3986b219f740216d8a4312_Sahel%20AI%20Logo%20Icon-Black.png">
+  <link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3986b219f740216d8a4312_Sahel%20AI%20Logo%20Icon-Black.png">
 
-  <!-- ── Fonts ────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -33,24 +27,61 @@
       --bg: #ffffff; --ink: #0D0D0D; --mid: #6B7280;
       --rule: #E5E7EB; --accent: #1A3A2F;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max: 780px; --pad: clamp(1.25rem, 5vw, 2rem);
+      --max: 820px; --pad: clamp(1.25rem, 5vw, 2rem);
     }
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.7; }
+
+    /* ── HEADER ── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: saturate(180%) blur(12px);
-      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
       border-bottom: 1px solid var(--rule);
     }
     .header-inner {
       max-width: var(--max); margin: 0 auto;
-      padding: 0 var(--pad); height: 56px;
-      display: flex; align-items: center;
+      padding: 0 var(--pad); height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
     }
-    .logo { font-weight: 300; font-size: 1.125rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap; }
-    .logo strong { font-weight: 600; letter-spacing: -0.01em; }
+    .logo {
+      display: flex; align-items: center;
+      text-decoration: none; flex-shrink: 0; white-space: nowrap;
+    }
+    .logo img { height: 28px; width: auto; display: block; }
+    .logo-text { font-weight: 300; font-size: 1.125rem; letter-spacing: 0.04em; color: var(--ink); }
+    .logo-text strong { font-weight: 600; letter-spacing: -0.01em; }
+
+    nav { display: flex; align-items: center; }
+    nav a {
+      font-size: 0.8125rem; font-weight: 400; color: var(--mid);
+      text-decoration: none; padding: 0.35rem 0.7rem;
+      letter-spacing: 0.01em; transition: color 0.15s ease; white-space: nowrap;
+    }
+    nav a:hover { color: var(--ink); }
+    nav a.external::after { content: ' ↗'; font-size: 0.68rem; opacity: 0.55; }
+
+    .nav-toggle {
+      display: none; background: none; border: none;
+      cursor: pointer; padding: 0.4rem; color: var(--ink); flex-shrink: 0;
+    }
+    .nav-toggle svg { display: block; }
+
+    .mobile-nav {
+      display: none; flex-direction: column; background: #fff;
+      border-bottom: 1px solid var(--rule); padding: 0.5rem var(--pad) 1rem;
+    }
+    .mobile-nav a {
+      font-size: 0.9375rem; font-weight: 400; color: var(--ink);
+      text-decoration: none; padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule); letter-spacing: 0.01em;
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a.external::after { content: ' ↗'; font-size: 0.75rem; opacity: 0.5; }
+    .mobile-nav.open { display: flex; }
+
+    /* ── CONTENT ── */
     main { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
     .doc-header { padding: clamp(3rem, 8vw, 4.5rem) 0 2.5rem; border-bottom: 1px solid var(--rule); }
     .doc-eyebrow { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
@@ -66,19 +97,59 @@
     .doc-body li { margin-bottom: 0.35rem; }
     .doc-body a { color: var(--accent); text-decoration: none; }
     .doc-body a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
     footer { border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; padding: 2rem var(--pad); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
     .footer-copy { font-size: 0.8125rem; color: var(--mid); }
+    .footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-contact a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
+    .footer-contact a:hover { color: var(--ink); }
     .footer-links { display: flex; gap: 1.25rem; }
     .footer-links a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
     .footer-links a:hover { color: var(--ink); }
-    @media (max-width: 640px) { footer { flex-direction: column; align-items: flex-start; } }
+
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .nav-toggle { display: flex; align-items: center; justify-content: center; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-right { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <div class="header-inner">
-      <a href="/" class="logo"><strong>Sahel</strong>&nbsp;AI</a>
+      <a href="/" class="logo" aria-label="Sahel AI home">
+        <img
+          src="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3984b16de84f74aa0438a8_Sahel%20AI%20Logo%20Text%20%26%20Icon-%20Black%20on%20white%20BG.png"
+          alt="Sahel AI"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <span class="logo-text" style="display:none"><strong>Sahel</strong>&nbsp;AI</span>
+      </a>
+
+      <nav id="desktop-nav" aria-label="Main navigation">
+        <a href="/#solutions">Solutions</a>
+        <a href="/#research">Research</a>
+        <a href="/#products">Products</a>
+        <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="external">Trust Center</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4"  width="22" height="1.75" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
     </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="/#solutions" onclick="closeMenu()">Solutions</a>
+      <a href="/#research"  onclick="closeMenu()">Research</a>
+      <a href="/#products"  onclick="closeMenu()">Products</a>
+      <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="external">Trust Center</a>
+    </nav>
   </header>
 
   <main>
@@ -98,7 +169,7 @@
         <p>We collect information in the following ways:</p>
         <ul>
           <li><strong>Information you provide directly.</strong> When you contact us (e.g., via hello@sahelai.com), sign up for our products, or fill out forms, we collect the information you submit, such as your name, email address, company name, and message content.</li>
-          <li><strong>Usage data.</strong> We automatically collect certain technical data when you access our website, including your IP address, browser type and version, pages visited, time and date of your visit, and referring URLs. This data is collected via standard server logs and analytics tools.</li>
+          <li><strong>Usage data.</strong> We automatically collect certain technical data when you access our website, including your IP address, browser type and version, pages visited, time and date of your visit, and referring URLs.</li>
           <li><strong>Cookies and similar technologies.</strong> We may use cookies or similar tracking technologies to improve your experience. You can control cookie preferences through your browser settings.</li>
         </ul>
       </section>
@@ -117,41 +188,39 @@
       </section>
       <section>
         <h2>4. Sharing of information</h2>
-        <p>We may share your information in the following limited circumstances:</p>
         <ul>
           <li><strong>Service providers.</strong> We engage trusted third-party vendors (e.g., hosting, analytics, email) who process data on our behalf under confidentiality obligations consistent with this policy.</li>
-          <li><strong>Legal compliance.</strong> We may disclose information if required by law, court order, or governmental authority, or to protect the rights, property, or safety of Sahel Group Inc., our users, or the public.</li>
-          <li><strong>Business transfers.</strong> In connection with a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you before your information becomes subject to a materially different privacy policy.</li>
+          <li><strong>Legal compliance.</strong> We may disclose information if required by law, court order, or governmental authority.</li>
+          <li><strong>Business transfers.</strong> In connection with a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
         </ul>
       </section>
       <section>
         <h2>5. Data retention</h2>
-        <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. When data is no longer needed, we take reasonable steps to delete or anonymize it.</p>
+        <p>We retain personal information for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law.</p>
       </section>
       <section>
         <h2>6. Security</h2>
-        <p>We implement commercially reasonable technical and organizational measures to protect your information against unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.</p>
+        <p>We implement commercially reasonable technical and organizational measures to protect your information against unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet is completely secure.</p>
       </section>
       <section>
         <h2>7. International users</h2>
-        <p>Sahel Group Inc. is based in the United States. If you access our services from outside the United States, please be aware that your information may be transferred to, stored, and processed in the United States, where data protection laws may differ from those in your jurisdiction.</p>
+        <p>Sahel Group Inc. is based in the United States. If you access our services from outside the United States, your information may be transferred to, stored, and processed in the United States.</p>
       </section>
       <section>
         <h2>8. Your rights</h2>
-        <p>Depending on your location, you may have rights regarding your personal information, including the right to access, correct, or delete data we hold about you. To exercise these rights, please contact us at <a href="mailto:hello@sahelai.com">hello@sahelai.com</a>. We will respond within a reasonable timeframe and in accordance with applicable law.</p>
+        <p>Depending on your location, you may have rights regarding your personal information, including the right to access, correct, or delete data we hold about you. To exercise these rights, contact us at <a href="mailto:hello@sahelai.com">hello@sahelai.com</a>.</p>
       </section>
       <section>
         <h2>9. Third-party links</h2>
-        <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any third-party services you visit.</p>
+        <p>Our website may contain links to third-party websites. We are not responsible for their privacy practices and encourage you to review their policies.</p>
       </section>
       <section>
         <h2>10. Changes to this policy</h2>
-        <p>We may update this Privacy Policy from time to time. When we do, we will revise the effective date at the top of this page. Your continued use of our services after any changes constitutes your acceptance of the updated policy. For material changes, we will make reasonable efforts to provide notice.</p>
+        <p>We may update this Privacy Policy from time to time. We will revise the effective date at the top of this page. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
       </section>
       <section>
         <h2>11. Contact</h2>
-        <p>For questions or concerns about this Privacy Policy, please contact us at:<br>
-        <strong>Sahel Group Inc.</strong><br>
+        <p><strong>Sahel Group Inc.</strong><br>
         <a href="mailto:hello@sahelai.com">hello@sahelai.com</a></p>
       </section>
     </div>
@@ -159,10 +228,32 @@
 
   <footer>
     <span class="footer-copy">© 2026 Sahel Group Inc.</span>
-    <div class="footer-links">
-      <a href="/privacy-policy">Privacy</a>
-      <a href="/terms">Terms</a>
+    <div class="footer-right">
+      <div class="footer-contact"><a href="mailto:hello@sahelai.com">hello@sahelai.com</a></div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const toggle   = document.getElementById('nav-toggle');
+    const drawer   = document.getElementById('mobile-nav');
+    const burger   = '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+    const closeIco = '<line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>';
+    toggle.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.querySelector('svg').innerHTML = isOpen ? closeIco : burger;
+    });
+    function closeMenu() {
+      drawer.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      toggle.querySelector('svg').innerHTML = burger;
+    }
+    document.addEventListener('click', (e) => { if (!e.target.closest('header')) closeMenu(); });
+  </script>
+
 </body>
 </html>
