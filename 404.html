@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting — Sahel AI</title>
+  <link rel="icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3986b219f740216d8a4312_Sahel%20AI%20Logo%20Icon-Black.png">
+  <script>
+    // Redirect old indexed URLs to homepage
+    const redirects = {
+      '/ai-lab': '/',
+      '/blog': '/',
+      '/ai-risk-management': '/#solutions',
+      '/security': '/#security'
+    };
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const dest = redirects[path] || '/';
+    window.location.replace(dest);
+  </script>
+  <meta http-equiv="refresh" content="0;url=/">
+</head>
+<body>
+  <p>Redirecting…</p>
+</body>
+</html>
