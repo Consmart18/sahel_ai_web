@@ -3,26 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ── Primary SEO ─────────────────────────────────────────── -->
   <title>Terms of Service — Sahel AI</title>
   <meta name="description" content="Sahel Group Inc. terms of service. Read the terms governing your use of Sahel AI products and website.">
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://sahelai.com/terms">
-
-  <!-- ── Open Graph ───────────────────────────────────────────── -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://sahelai.com/terms">
   <meta property="og:title"       content="Terms of Service — Sahel AI">
-  <meta property="og:description" content="Sahel Group Inc. terms of service. Read the terms governing your use of Sahel AI products and website.">
+  <meta property="og:description" content="Sahel Group Inc. terms of service.">
   <meta property="og:site_name"   content="Sahel AI">
 
-  <!-- ── Favicon ──────────────────────────────────────────────── -->
-  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
-  <link rel="alternate icon" href="/assets/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <!-- Favicon (icon-only mark) -->
+  <link rel="icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3986b219f740216d8a4312_Sahel%20AI%20Logo%20Icon-Black.png">
+  <link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3986b219f740216d8a4312_Sahel%20AI%20Logo%20Icon-Black.png">
 
-  <!-- ── Fonts ────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -33,20 +27,42 @@
       --bg: #ffffff; --ink: #0D0D0D; --mid: #6B7280;
       --rule: #E5E7EB; --accent: #1A3A2F;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max: 780px; --pad: clamp(1.25rem, 5vw, 2rem);
+      --max: 820px; --pad: clamp(1.25rem, 5vw, 2rem);
     }
     html { font-size: 16px; -webkit-font-smoothing: antialiased; }
     body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.7; }
+
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: saturate(180%) blur(12px);
-      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
       border-bottom: 1px solid var(--rule);
     }
-    .header-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); height: 56px; display: flex; align-items: center; }
-    .logo { font-weight: 300; font-size: 1.125rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap; }
-    .logo strong { font-weight: 600; letter-spacing: -0.01em; }
+    .header-inner {
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--pad); height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+    .logo img { height: 28px; width: auto; display: block; }
+    .logo-text { font-weight: 300; font-size: 1.125rem; letter-spacing: 0.04em; color: var(--ink); }
+    .logo-text strong { font-weight: 600; letter-spacing: -0.01em; }
+
+    nav { display: flex; align-items: center; }
+    nav a { font-size: 0.8125rem; font-weight: 400; color: var(--mid); text-decoration: none; padding: 0.35rem 0.7rem; letter-spacing: 0.01em; transition: color 0.15s ease; white-space: nowrap; }
+    nav a:hover { color: var(--ink); }
+    nav a.external::after { content: ' ↗'; font-size: 0.68rem; opacity: 0.55; }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; color: var(--ink); flex-shrink: 0; }
+    .nav-toggle svg { display: block; }
+
+    .mobile-nav { display: none; flex-direction: column; background: #fff; border-bottom: 1px solid var(--rule); padding: 0.5rem var(--pad) 1rem; }
+    .mobile-nav a { font-size: 0.9375rem; font-weight: 400; color: var(--ink); text-decoration: none; padding: 0.65rem 0; border-bottom: 1px solid var(--rule); letter-spacing: 0.01em; }
+    .mobile-nav a:last-child { border-bottom: none; }
+    .mobile-nav a.external::after { content: ' ↗'; font-size: 0.75rem; opacity: 0.5; }
+    .mobile-nav.open { display: flex; }
+
     main { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
     .doc-header { padding: clamp(3rem, 8vw, 4.5rem) 0 2.5rem; border-bottom: 1px solid var(--rule); }
     .doc-eyebrow { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
@@ -62,19 +78,59 @@
     .doc-body li { margin-bottom: 0.35rem; }
     .doc-body a { color: var(--accent); text-decoration: none; }
     .doc-body a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
     footer { border-top: 1px solid var(--rule); max-width: var(--max); margin: 0 auto; padding: 2rem var(--pad); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
     .footer-copy { font-size: 0.8125rem; color: var(--mid); }
+    .footer-right { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-contact a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
+    .footer-contact a:hover { color: var(--ink); }
     .footer-links { display: flex; gap: 1.25rem; }
     .footer-links a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
     .footer-links a:hover { color: var(--ink); }
-    @media (max-width: 640px) { footer { flex-direction: column; align-items: flex-start; } }
+
+    @media (max-width: 640px) {
+      nav { display: none; }
+      .nav-toggle { display: flex; align-items: center; justify-content: center; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-right { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
   </style>
 </head>
 <body>
+
   <header>
     <div class="header-inner">
-      <a href="/" class="logo"><strong>Sahel</strong>&nbsp;AI</a>
+      <a href="/" class="logo" aria-label="Sahel AI home">
+        <img
+          src="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3984b16de84f74aa0438a8_Sahel%20AI%20Logo%20Text%20%26%20Icon-%20Black%20on%20white%20BG.png"
+          alt="Sahel AI"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <span class="logo-text" style="display:none"><strong>Sahel</strong>&nbsp;AI</span>
+      </a>
+
+      <nav id="desktop-nav" aria-label="Main navigation">
+        <a href="/#solutions">Solutions</a>
+        <a href="/#research">Research</a>
+        <a href="/#products">Products</a>
+        <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="external">Trust Center</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4"  width="22" height="1.75" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
     </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="/#solutions" onclick="closeMenu()">Solutions</a>
+      <a href="/#research"  onclick="closeMenu()">Research</a>
+      <a href="/#products"  onclick="closeMenu()">Products</a>
+      <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="external">Trust Center</a>
+    </nav>
   </header>
 
   <main>
@@ -107,47 +163,43 @@
       </section>
       <section>
         <h2>4. Intellectual property</h2>
-        <p>All content on our website and within our products, including but not limited to text, graphics, logos, software, and research publications, is the property of Sahel Group Inc. or its licensors and is protected by applicable intellectual property laws.</p>
-        <p>Nothing in these Terms grants you any right, title, or interest in our intellectual property. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.</p>
+        <p>All content on our website and within our products — including text, graphics, logos, software, and research publications — is the property of Sahel Group Inc. or its licensors and is protected by applicable intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.</p>
       </section>
       <section>
         <h2>5. User content</h2>
-        <p>If you submit, upload, or otherwise provide any content, data, or materials to us in connection with our services ("User Content"), you represent that you have all necessary rights to do so. You grant Sahel Group Inc. a limited, non-exclusive, royalty-free license to use such User Content solely to the extent necessary to provide the services to you.</p>
-        <p>We do not claim ownership of your User Content and will not use it beyond what is necessary to deliver our services or as required by law.</p>
+        <p>If you submit or provide any content to us in connection with our services, you represent that you have all necessary rights to do so. You grant Sahel Group Inc. a limited, non-exclusive, royalty-free license to use such content solely to the extent necessary to provide the services to you. We do not claim ownership of your content.</p>
       </section>
       <section>
         <h2>6. Disclaimer of warranties</h2>
-        <p>OUR SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT OUR SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.</p>
+        <p>OUR SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
       </section>
       <section>
         <h2>7. Limitation of liability</h2>
-        <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, SAHEL GROUP INC. AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES — INCLUDING LOSS OF PROFITS, DATA, OR GOODWILL — ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE OUR SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
-        <p>IN NO EVENT SHALL OUR TOTAL LIABILITY TO YOU EXCEED THE GREATER OF (A) THE AMOUNTS PAID BY YOU TO US IN THE TWELVE MONTHS PRECEDING THE CLAIM, OR (B) ONE HUNDRED U.S. DOLLARS ($100).</p>
+        <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, SAHEL GROUP INC. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OUR SERVICES. IN NO EVENT SHALL OUR TOTAL LIABILITY EXCEED THE GREATER OF (A) AMOUNTS PAID BY YOU IN THE TWELVE MONTHS PRECEDING THE CLAIM, OR (B) ONE HUNDRED U.S. DOLLARS ($100).</p>
       </section>
       <section>
         <h2>8. Indemnification</h2>
-        <p>You agree to indemnify, defend, and hold harmless Sahel Group Inc. and its officers, directors, employees, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to your violation of these Terms or your use of our services.</p>
+        <p>You agree to indemnify and hold harmless Sahel Group Inc. and its officers, directors, employees, and agents from any claims, liabilities, damages, or expenses (including reasonable attorneys' fees) arising out of your violation of these Terms or your use of our services.</p>
       </section>
       <section>
         <h2>9. Governing law and dispute resolution</h2>
-        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, United States, without regard to its conflict of law provisions. Any dispute arising out of or relating to these Terms or our services shall be resolved exclusively in the state or federal courts located in the State of Delaware, and you consent to the personal jurisdiction of such courts.</p>
+        <p>These Terms shall be governed by the laws of the State of Delaware, United States, without regard to its conflict of law provisions. Any disputes shall be resolved exclusively in the state or federal courts located in Delaware.</p>
       </section>
       <section>
         <h2>10. Third-party links and services</h2>
-        <p>Our website and services may contain links to third-party websites or integrate with third-party services. These are provided for convenience only. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites or services.</p>
+        <p>Our website may contain links to third-party websites. We have no control over and assume no responsibility for their content, privacy policies, or practices.</p>
       </section>
       <section>
         <h2>11. Modifications to terms</h2>
-        <p>We reserve the right to update or modify these Terms at any time. We will indicate the effective date of the most recent revision at the top of this page. Your continued use of our services after any changes constitutes your acceptance of the revised Terms. We encourage you to review these Terms periodically.</p>
+        <p>We reserve the right to update these Terms at any time. We will revise the effective date at the top of this page. Continued use of our services after changes constitutes acceptance of the revised Terms.</p>
       </section>
       <section>
         <h2>12. Termination</h2>
-        <p>We reserve the right to suspend or terminate your access to our services at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to other users, us, third parties, or for any other reason. Upon termination, all provisions of these Terms that by their nature should survive will survive, including intellectual property provisions, disclaimers, and limitations of liability.</p>
+        <p>We reserve the right to suspend or terminate your access to our services at our sole discretion for conduct that violates these Terms or is harmful to others. Provisions that by their nature should survive termination will survive.</p>
       </section>
       <section>
         <h2>13. Contact</h2>
-        <p>If you have any questions about these Terms, please contact us at:<br>
-        <strong>Sahel Group Inc.</strong><br>
+        <p><strong>Sahel Group Inc.</strong><br>
         <a href="mailto:hello@sahelai.com">hello@sahelai.com</a></p>
       </section>
     </div>
@@ -155,10 +207,32 @@
 
   <footer>
     <span class="footer-copy">© 2026 Sahel Group Inc.</span>
-    <div class="footer-links">
-      <a href="/privacy-policy">Privacy</a>
-      <a href="/terms">Terms</a>
+    <div class="footer-right">
+      <div class="footer-contact"><a href="mailto:hello@sahelai.com">hello@sahelai.com</a></div>
+      <div class="footer-links">
+        <a href="/privacy-policy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    const toggle   = document.getElementById('nav-toggle');
+    const drawer   = document.getElementById('mobile-nav');
+    const burger   = '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+    const closeIco = '<line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>';
+    toggle.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.querySelector('svg').innerHTML = isOpen ? closeIco : burger;
+    });
+    function closeMenu() {
+      drawer.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      toggle.querySelector('svg').innerHTML = burger;
+    }
+    document.addEventListener('click', (e) => { if (!e.target.closest('header')) closeMenu(); });
+  </script>
+
 </body>
 </html>
