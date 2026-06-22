@@ -3,14 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sahel AI - Operationalizing AI risk management and advancing AI safety research.">
-  <title>Sahel AI</title>
-  <!-- Favicon: place your logo file at /assets/logo.svg (or .png) and update the href below -->
-  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
-  <link rel="alternate icon" href="/assets/favicon.png">
+
+  <!-- ── Primary SEO ─────────────────────────────────────────── -->
+  <title>Sahel AI - AI Risk Management & Governance</title>
+  <meta name="description" content="Sahel AI helps organizations assess, mitigate, and monitor AI risks. Fully mapped to the EU AI Act, NIST AI RMF, and ISO 42001.">
+  <meta name="keywords" content="AI risk management, AI governance, AI red teaming, model evaluation, EU AI Act, NIST AI RMF, ISO 42001, enterprise AI safety">
+  <meta name="author" content="Sahel Group Inc.">
+  <link rel="canonical" href="https://sahelai.com/">
+
+  <!-- ── Open Graph ───────────────────────────────────────────── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://sahelai.com/">
+  <meta property="og:title"       content="Sahel AI - AI Risk Management & Governance">
+  <meta property="og:description" content="Sahel AI helps organizations assess, mitigate, and monitor AI risks. Fully mapped to the EU AI Act, NIST AI RMF, and ISO 42001.">
+  <meta property="og:image"       content="https://sahelai.com/assets/og-image.png">
+  <meta property="og:site_name"   content="Sahel AI">
+  <meta property="og:locale"      content="en_US">
+
+  <!-- ── Twitter / X Card ────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:url"         content="https://sahelai.com/">
+  <meta name="twitter:title"       content="Sahel AI — AI Risk Management & Governance">
+  <meta name="twitter:description" content="Assess, mitigate, and monitor AI risks. Fully mapped to EU AI Act, NIST AI RMF, and ISO 42001.">
+  <meta name="twitter:image"       content="https://sahelai.com/assets/og-image.png">
+
+  <!-- ── Schema.org JSON-LD ──────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sahel Group Inc.",
+    "alternateName": "Sahel AI",
+    "url": "https://sahelai.com",
+    "logo": "https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3984b16de84f74aa0438a8_Sahel%20AI%20Logo%20Text%20%26%20Icon-%20Black%20on%20white%20BG.png",
+    "email": "hello@sahelai.com",
+    "description": "Sahel AI is an AI risk management company that helps organizations assess, mitigate, and monitor AI risks — fully mapped to global standards like the EU AI Act, NIST AI RMF, and ISO 42001.",
+    "knowsAbout": ["AI risk management", "AI governance", "AI red teaming", "model evaluation", "EU AI Act", "NIST AI RMF", "ISO 42001"]
+  }
+  </script>
+
+  <!-- ── Favicon ──────────────────────────────────────────────── -->
+  <link rel="icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3984b16de84f74aa0438a8_Sahel%20AI%20Logo%20Text%20%26%20Icon-%20Black%20on%20white%20BG.png">
+  <link rel="apple-touch-icon" href="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3984b16de84f74aa0438a8_Sahel%20AI%20Logo%20Text%20%26%20Icon-%20Black%20on%20white%20BG.png">
+
+  <!-- ── Fonts ────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,130 +58,207 @@
       --bg: #ffffff;
       --ink: #0D0D0D;
       --mid: #6B7280;
-      --faint: #F3F4F6;
+      --faint: #F7F8F7;
       --rule: #E5E7EB;
       --accent: #1A3A2F;
       --accent-light: #E8F0EC;
+      --accent-mid: #2D5C47;
       --link: #1A3A2F;
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --max: 780px;
+      --max: 820px;
       --pad: clamp(1.25rem, 5vw, 2rem);
     }
 
     html { font-size: 16px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
     body { font-family: var(--font); background: var(--bg); color: var(--ink); line-height: 1.65; }
 
-    /* ── HEADER ─────────────────────────── */
+    /* ── HEADER ─────────────────────────────────── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: saturate(180%) blur(12px);
-      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: saturate(180%) blur(14px);
+      -webkit-backdrop-filter: saturate(180%) blur(14px);
       border-bottom: 1px solid var(--rule);
     }
-
     .header-inner {
       max-width: var(--max); margin: 0 auto;
-      padding: 0 var(--pad); height: 56px;
+      padding: 0 var(--pad); height: 58px;
       display: flex; align-items: center; justify-content: space-between;
     }
-
-    /* Logo */
     .logo {
-      display: flex; align-items: center; gap: 0.5rem;
+      display: flex; align-items: center;
+      text-decoration: none; flex-shrink: 0; white-space: nowrap;
+    }
+    .logo img {
+      height: 28px; width: auto; display: block;
+    }
+    /* fallback text if image fails */
+    .logo-text {
       font-weight: 300; font-size: 1.125rem;
       letter-spacing: 0.04em; color: var(--ink);
-      text-decoration: none; white-space: nowrap; flex-shrink: 0;
     }
-    .logo strong { font-weight: 600; letter-spacing: -0.01em; }
-    .logo-img { height: 24px; width: auto; display: block; }
+    .logo-text strong { font-weight: 600; letter-spacing: -0.01em; }
 
-    /* Desktop nav */
-    nav {
-      display: flex; align-items: center;
-    }
+    nav { display: flex; align-items: center; }
     nav a {
       font-size: 0.8125rem; font-weight: 400; color: var(--mid);
-      text-decoration: none; padding: 0.35rem 0.75rem;
+      text-decoration: none; padding: 0.35rem 0.7rem;
       letter-spacing: 0.01em; transition: color 0.15s ease; white-space: nowrap;
     }
     nav a:hover { color: var(--ink); }
-    nav a.external::after { content: ' ↗'; font-size: 0.7rem; opacity: 0.6; }
+    nav a.external::after { content: ' ↗'; font-size: 0.68rem; opacity: 0.55; }
 
-    /* Hamburger button — hidden on desktop */
     .nav-toggle {
-      display: none;
-      background: none; border: none; cursor: pointer;
-      padding: 0.4rem; color: var(--ink);
-      flex-shrink: 0;
+      display: none; background: none; border: none;
+      cursor: pointer; padding: 0.4rem; color: var(--ink); flex-shrink: 0;
     }
     .nav-toggle svg { display: block; }
 
-    /* Mobile drawer */
     .mobile-nav {
-      display: none; /* shown via JS class */
-      flex-direction: column;
-      background: #fff;
+      display: none; flex-direction: column; background: #fff;
       border-bottom: 1px solid var(--rule);
       padding: 0.5rem var(--pad) 1rem;
     }
     .mobile-nav a {
       font-size: 0.9375rem; font-weight: 400; color: var(--ink);
       text-decoration: none; padding: 0.65rem 0;
-      border-bottom: 1px solid var(--rule);
-      letter-spacing: 0.01em;
+      border-bottom: 1px solid var(--rule); letter-spacing: 0.01em;
     }
     .mobile-nav a:last-child { border-bottom: none; }
     .mobile-nav a.external::after { content: ' ↗'; font-size: 0.75rem; opacity: 0.5; }
     .mobile-nav.open { display: flex; }
 
-    /* ── MAIN ───────────────────────────── */
+    /* ── MAIN ───────────────────────────────────── */
     main { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
 
-    /* ── HERO ───────────────────────────── */
+    /* ── HERO ───────────────────────────────────── */
     .hero {
-      padding: clamp(3.5rem, 10vw, 5.5rem) 0 clamp(3rem, 8vw, 4.5rem);
+      padding: clamp(4rem, 11vw, 6rem) 0 clamp(3rem, 8vw, 4.5rem);
       border-bottom: 1px solid var(--rule);
     }
     .hero-eyebrow {
       font-size: 0.6875rem; font-weight: 500;
-      letter-spacing: 0.12em; text-transform: uppercase;
+      letter-spacing: 0.13em; text-transform: uppercase;
       color: var(--accent); margin-bottom: 1.25rem;
     }
     .hero h1 {
-      font-size: clamp(1.75rem, 5vw, 2.5rem);
-      font-weight: 300; line-height: 1.25;
-      letter-spacing: -0.02em; color: var(--ink); max-width: 26ch;
+      font-size: clamp(2rem, 5.5vw, 3rem);
+      font-weight: 300; line-height: 1.2;
+      letter-spacing: -0.025em; color: var(--ink);
+      max-width: 22ch;
     }
     .hero h1 em { font-style: normal; font-weight: 600; }
     .hero-sub {
-      margin-top: 1.5rem; font-size: 0.9375rem;
-      color: var(--mid); max-width: 52ch; line-height: 1.7;
+      margin-top: 1.5rem; font-size: 1rem;
+      color: var(--mid); max-width: 50ch; line-height: 1.7;
     }
 
-    /* ── SECTIONS ───────────────────────── */
-    section { padding: clamp(2.5rem, 7vw, 3.75rem) 0; border-bottom: 1px solid var(--rule); }
-    section:last-of-type { border-bottom: none; }
+    /* ── VALUE PROPS ────────────────────────────── */
+    .value-props {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .value-prop {
+      padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1rem, 3vw, 1.75rem);
+      border-right: 1px solid var(--rule);
+    }
+    .value-prop:last-child { border-right: none; }
+    .value-prop-icon {
+      width: 28px; height: 28px; margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .value-prop h3 {
+      font-size: 0.875rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 0.5rem;
+      letter-spacing: -0.01em; line-height: 1.3;
+    }
+    .value-prop p {
+      font-size: 0.8125rem; color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* ── SECTION SHELL ──────────────────────────── */
+    .section-wrap {
+      padding: clamp(2.75rem, 7vw, 4rem) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-wrap:last-of-type { border-bottom: none; }
 
     .section-label {
       font-size: 0.6875rem; font-weight: 500;
-      letter-spacing: 0.12em; text-transform: uppercase;
+      letter-spacing: 0.13em; text-transform: uppercase;
       color: var(--mid); margin-bottom: 1.5rem;
     }
-    .section-body { font-size: 0.9375rem; color: var(--ink); line-height: 1.75; max-width: 58ch; }
-    .section-body p + p { margin-top: 1rem; }
+    .section-intro {
+      font-size: 0.9375rem; color: var(--ink);
+      line-height: 1.75; max-width: 56ch;
+      margin-bottom: 2.25rem;
+    }
 
-    /* ── PAPER ──────────────────────────── */
-    .paper-list { margin-top: 2rem; }
+    /* ── SERVICES GRID ──────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--bg);
+      padding: 1.75rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .service-card-label {
+      font-size: 0.6875rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .service-card h3 {
+      font-size: 0.9375rem; font-weight: 600;
+      color: var(--ink); letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    .service-card p {
+      font-size: 0.85rem; color: var(--mid);
+      line-height: 1.65; margin-top: 0.15rem;
+    }
+
+    /* ── SECURITY BADGES ────────────────────────── */
+    .security-row {
+      display: flex; align-items: center;
+      gap: 1.5rem; flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+    .security-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--ink);
+    }
+    .security-badge svg {
+      width: 16px; height: 16px; color: var(--accent); flex-shrink: 0;
+    }
+    .trust-link {
+      font-size: 0.8125rem; font-weight: 500;
+      color: var(--link); text-decoration: none;
+      margin-top: 1rem; display: inline-block;
+      letter-spacing: 0.01em;
+    }
+    .trust-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    /* ── PAPER ──────────────────────────────────── */
+    .paper-list { margin-top: 0; }
     .paper-entry { border-left: 2px solid var(--accent); padding: 1.25rem 0 1.25rem 1.5rem; }
     .paper-meta { display: flex; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
     .paper-title { font-size: 0.9375rem; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
     .paper-badge {
       font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.06em;
       text-transform: uppercase; color: var(--accent);
-      background: var(--accent-light); padding: 0.2rem 0.55rem; border-radius: 3px;
-      white-space: nowrap; flex-shrink: 0; align-self: center;
+      background: var(--accent-light); padding: 0.2rem 0.55rem;
+      border-radius: 3px; white-space: nowrap; flex-shrink: 0; align-self: center;
     }
     .paper-venue { font-size: 0.8125rem; color: var(--mid); margin-bottom: 0.6rem; }
     .paper-desc { font-size: 0.875rem; color: #4B5563; line-height: 1.65; max-width: 54ch; }
@@ -152,8 +269,7 @@
     }
     .paper-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    /* ── PRODUCTS ───────────────────────── */
-    .product-list { margin-top: 2rem; }
+    /* ── PRODUCTS ───────────────────────────────── */
     .product-entry { padding: 1.25rem 0; border-top: 1px solid var(--rule); }
     .product-entry:first-child { border-top: none; }
     .product-name { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
@@ -165,7 +281,7 @@
     }
     .product-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    /* ── FOOTER ─────────────────────────── */
+    /* ── FOOTER ─────────────────────────────────── */
     footer {
       border-top: 1px solid var(--rule);
       max-width: var(--max); margin: 0 auto;
@@ -181,15 +297,24 @@
     .footer-links a { font-size: 0.8125rem; color: var(--mid); text-decoration: none; }
     .footer-links a:hover { color: var(--ink); }
 
-    /* ── MOBILE ─────────────────────────── */
+    /* ── MOBILE ─────────────────────────────────── */
     @media (max-width: 640px) {
       nav { display: none; }
       .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
+      .value-props { grid-template-columns: 1fr; }
+      .value-prop { border-right: none; border-bottom: 1px solid var(--rule); padding: 1.5rem 0; }
+      .value-prop:last-child { border-bottom: none; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer-right { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-
       .paper-entry { padding-left: 1.1rem; }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 1.75rem; }
     }
   </style>
 </head>
@@ -197,25 +322,22 @@
 
   <header>
     <div class="header-inner">
-      <!--
-        Logo: once you have your logo file, place it at /assets/logo.svg
-        and swap the text-only fallback below for:
-          <a href="/" class="logo">
-            <img src="/assets/logo.svg" alt="Sahel AI" class="logo-img">
-          </a>
-        For now, text logo is shown.
-      -->
-      <a href="/" class="logo"><strong>Sahel</strong>&nbsp;AI</a>
+      <a href="/" class="logo" aria-label="Sahel AI home">
+        <img
+          src="https://cdn.prod.website-files.com/699b57a5d3b203bd92aab766/6a3984b16de84f74aa0438a8_Sahel%20AI%20Logo%20Text%20%26%20Icon-%20Black%20on%20white%20BG.png"
+          alt="Sahel AI"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <span class="logo-text" style="display:none"><strong>Sahel</strong>&nbsp;AI</span>
+      </a>
 
-      <!-- Desktop nav -->
-      <nav id="desktop-nav">
+      <nav id="desktop-nav" aria-label="Main navigation">
         <a href="#solutions">Solutions</a>
         <a href="#research">Research</a>
         <a href="#products">Products</a>
-        <a href="https://sahel.securitypal.com/" target="_blank" class="external">Trust Center</a>
+        <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="external">Trust Center</a>
       </nav>
 
-      <!-- Hamburger (mobile only) -->
       <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
           <rect y="4"  width="22" height="1.75" rx="1" fill="currentColor"/>
@@ -225,64 +347,136 @@
       </button>
     </div>
 
-    <!-- Mobile nav drawer -->
-    <div class="mobile-nav" id="mobile-nav" role="navigation">
-      <a href="#solutions"  onclick="closeMenu()">Solutions</a>
-      <a href="#research"   onclick="closeMenu()">Research</a>
-      <a href="#products"   onclick="closeMenu()">Products</a>
-      <a href="https://sahel.securitypal.com/" target="_blank" class="external">Trust Center</a>
-    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="#solutions" onclick="closeMenu()">Solutions</a>
+      <a href="#research"  onclick="closeMenu()">Research</a>
+      <a href="#products"  onclick="closeMenu()">Products</a>
+      <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="external">Trust Center</a>
+    </nav>
   </header>
 
   <main>
+
+    <!-- ── HERO ──────────────────────────────────── -->
     <section class="hero">
-      <p class="hero-eyebrow">AI Risk Management</p>
-      <h1>Making AI deployment <em>safe, auditable, and reliable.</em></h1>
-      <p class="hero-sub">Sahel AI helps organizations navigate the operational realities of deploying AI — translating safety principles into governance frameworks that actually work in practice.</p>
+      <p class="hero-eyebrow">Your AI Governance Partner</p>
+      <h1>Assess, mitigate, and <em>monitor AI risks.</em></h1>
+      <p class="hero-sub">Ensure fairness, transparency, privacy, and robustness across your AI systems — fully mapped to the EU AI Act, NIST AI RMF, and ISO 42001.</p>
     </section>
 
-    <section id="solutions">
+    <!-- ── VALUE PROPS ────────────────────────────── -->
+    <div class="value-props" aria-label="Why Sahel AI">
+      <div class="value-prop">
+        <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+        </svg>
+        <h3>Global Regulatory Alignment</h3>
+        <p>Ensure enterprise AI deployments fully align with the EU AI Act, NIST AI RMF, and ISO 42001.</p>
+      </div>
+      <div class="value-prop">
+        <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <h3>Rigorous Evaluation</h3>
+        <p>Stress-test models to uncover critical vulnerabilities, prompt injections, and hidden jailbreaks.</p>
+      </div>
+      <div class="value-prop">
+        <svg class="value-prop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+        </svg>
+        <h3>Unblocked AI Adoption</h3>
+        <p>Mitigate critical risks to unblock development pipelines and deploy enterprise AI with confidence.</p>
+      </div>
+    </div>
+
+    <!-- ── SOLUTIONS ──────────────────────────────── -->
+    <div class="section-wrap" id="solutions">
       <p class="section-label">Solutions</p>
-      <div class="section-body">
-        <p>As enterprise AI adoption accelerates, the gap between capability and organizational safety guardrails widens. We partner with organizations to build and execute robust frameworks for AI governance.</p>
-        <p>Our core focus is translating theoretical AI safety principles into operational reality — helping teams map vulnerabilities, mitigate risks, and deploy models with confidence.</p>
-      </div>
-    </section>
+      <p class="section-intro">As enterprise AI adoption accelerates, the gap between capability and organizational safety guardrails widens. We partner with organizations to build and execute robust governance frameworks — translating AI safety principles into operational reality.</p>
 
-    <section id="research">
-      <p class="section-label">Research</p>
-      <div class="section-body">
-        <p>Technical AI governance requires a deep understanding of model behaviors. We conduct and publish research in AI safety to advance the scientific community's understanding of systemic risks.</p>
+      <div class="services-grid" role="list">
+
+        <div class="service-card" role="listitem">
+          <span class="service-card-label">Risk</span>
+          <h3>AI Risk Management</h3>
+          <p>Assess, mitigate, and monitor AI risks across your organization. Map fairness, transparency, privacy, and robustness to global standards.</p>
+        </div>
+
+        <div class="service-card" role="listitem">
+          <span class="service-card-label">Offensive Testing</span>
+          <h3>AI Red Teaming</h3>
+          <p>Proactively expose critical LLM vulnerabilities. Aggressively stress-test your models to uncover prompt injections, system jailbreaks, and hidden data leakage.</p>
+        </div>
+
+        <div class="service-card" role="listitem">
+          <span class="service-card-label">Validation</span>
+          <h3>Model Evaluation</h3>
+          <p>Build automated evaluation pipelines to measure factual consistency, validate response relevance, and ensure overall output reliability.</p>
+        </div>
+
+        <div class="service-card" role="listitem">
+          <span class="service-card-label">Compliance</span>
+          <h3>Regulatory Mapping</h3>
+          <p>Map your AI systems to the EU AI Act, NIST AI RMF, and ISO 42001. Identify gaps, prioritize remediation, and build audit-ready documentation.</p>
+        </div>
+
       </div>
+    </div>
+
+    <!-- ── SECURITY ───────────────────────────────── -->
+    <div class="section-wrap" id="security">
+      <p class="section-label">Security</p>
+      <p class="section-intro">We comply with established data security standards and best practices to protect the confidentiality and integrity of your information.</p>
+
+      <div class="security-row">
+        <div class="security-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          ISO 27001
+        </div>
+        <div class="security-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          GDPR
+        </div>
+      </div>
+
+      <a href="https://sahel.securitypal.com/" target="_blank" rel="noopener" class="trust-link">Visit Trust Center ↗</a>
+    </div>
+
+    <!-- ── RESEARCH ───────────────────────────────── -->
+    <div class="section-wrap" id="research">
+      <p class="section-label">Research</p>
+      <p class="section-intro">Technical AI governance requires a deep understanding of model behaviors. We conduct and publish research in AI safety to advance the scientific community's understanding of systemic risks.</p>
+
       <div class="paper-list">
-        <div class="paper-entry">
+        <article class="paper-entry">
           <div class="paper-meta">
             <span class="paper-title">Mapping human anti-collusion mechanisms to multi-agent AI systems</span>
             <span class="paper-badge">ICML 2026</span>
           </div>
           <p class="paper-venue">Published in <em>Knowledge-Based Systems</em> · ICML 2026 Workshop on Technical AI Governance</p>
           <p class="paper-desc">Explores how established human frameworks for preventing collusion can be adapted to secure multi-agent AI environments.</p>
-          <a href="https://www.sciencedirect.com/science/article/pii/S0950705126007938" target="_blank" class="paper-link">Read the paper ↗</a>
-        </div>
+          <a href="https://www.sciencedirect.com/science/article/pii/S0950705126007938" target="_blank" rel="noopener" class="paper-link">Read the paper ↗</a>
+        </article>
       </div>
-    </section>
+    </div>
 
-    <section id="products">
+    <!-- ── PRODUCTS ───────────────────────────────── -->
+    <div class="section-wrap" id="products">
       <p class="section-label">Products</p>
-      <div class="section-body">
-        <p>Prior to our current focus on risk management, we built targeted applications to streamline complex workflows.</p>
-      </div>
-      <div class="product-list">
-        <div class="product-entry">
+      <p class="section-intro">Prior to our current focus on risk management, we built targeted applications to streamline complex workflows.</p>
+
+      <div>
+        <article class="product-entry">
           <p class="product-name">Sahel AI for Legal</p>
           <p class="product-desc">A contract drafting and review tool directly integrated into Microsoft Word, designed to reduce manual review time while maintaining high precision.</p>
           <div class="product-links">
-            <a href="https://app.sahel.ai/" target="_blank">Web App ↗</a>
-            <a href="https://marketplace.microsoft.com/en-us/product/office/wa200007503?tab=overview" target="_blank">MS Word Add-in ↗</a>
+            <a href="https://app.sahel.ai/" target="_blank" rel="noopener">Web App ↗</a>
+            <a href="https://marketplace.microsoft.com/en-us/product/office/wa200007503?tab=overview" target="_blank" rel="noopener">MS Word Add-in ↗</a>
           </div>
-        </div>
+        </article>
       </div>
-    </section>
+    </div>
+
   </main>
 
   <footer>
@@ -297,25 +491,23 @@
   </footer>
 
   <script>
-    const toggle = document.getElementById('nav-toggle');
-    const drawer = document.getElementById('mobile-nav');
+    const toggle   = document.getElementById('nav-toggle');
+    const drawer   = document.getElementById('mobile-nav');
+    const burger   = '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+    const closeIco = '<line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>';
 
     toggle.addEventListener('click', () => {
       const isOpen = drawer.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen);
-      // Swap to X icon when open
-      toggle.querySelector('svg').innerHTML = isOpen
-        ? '<line x1="3" y1="3" x2="19" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/><line x1="19" y1="3" x2="3" y2="19" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>'
-        : '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+      toggle.querySelector('svg').innerHTML = isOpen ? closeIco : burger;
     });
 
     function closeMenu() {
       drawer.classList.remove('open');
       toggle.setAttribute('aria-expanded', false);
-      toggle.querySelector('svg').innerHTML = '<rect y="4" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="10" width="22" height="1.75" rx="1" fill="currentColor"/><rect y="16" width="22" height="1.75" rx="1" fill="currentColor"/>';
+      toggle.querySelector('svg').innerHTML = burger;
     }
 
-    // Close drawer when clicking outside
     document.addEventListener('click', (e) => {
       if (!e.target.closest('header')) closeMenu();
     });
